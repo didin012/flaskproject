@@ -1,0 +1,36 @@
+To run the app locally.
+
+1. Open a virtualenv by installing
+    $ pip install --user virtualenv
+    #run this on a preferred directory
+    $ python -m virtualenv venv
+
+2. Run virtualenv
+    $ source ./Scripts/activate
+
+## if you wanna run python in gitbash
+echo "alias python='winpty python.exe'" >> ~/.bashrc
+
+3. run the app
+    $ python flaskblog.py
+
+
+
+To run using Docker
+
+1. Install docker first
+
+2. Build image using git, should be inside the directory where Dockerfile located.
+    $ docker image build -t flaskpython .
+
+3. list images
+    $ docker image ls
+
+4. Run
+    $ docker run -p 5000:5000 -d flaskpython
+
+5. when it is time to stop
+    $ docker stop <id>
+
+6. Prune, for stopped containers
+    $ docker system prune
